@@ -30,11 +30,25 @@ class BC:
         self.object_scale = object_scale
         self.max_batch_size = max_batch_size
 
+        #################################################################
+        #################################################################
+        #################################################################
+        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38] + list(range(39, 50))
+        act_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29]
         # get transformations
-        observations = np.concatenate([path["observations"] for path in expert_paths])
-        actions = np.concatenate([path["actions"] for path in expert_paths])
+        observations = np.concatenate([path["observations"][:, obs_indexes] for path in expert_paths])
+        actions = np.concatenate([path["actions"][:, act_indexes] for path in expert_paths])
         in_shift, in_scale = np.mean(observations, axis=0), np.std(observations, axis=0)
         out_shift, out_scale = np.mean(actions, axis=0), np.std(actions, axis=0)
+        #################################################################
+        #################################################################
+        #################################################################
+
+        # # get transformations
+        # observations = np.concatenate([path["observations"] for path in expert_paths])
+        # actions = np.concatenate([path["actions"] for path in expert_paths])
+        # in_shift, in_scale = np.mean(observations, axis=0), np.std(observations, axis=0)
+        # out_shift, out_scale = np.mean(actions, axis=0), np.std(actions, axis=0)
 
         # set scalings in the target policy
         self.policy.model.set_transformations(in_shift, in_scale, out_shift, out_scale)
@@ -119,8 +133,18 @@ class BC:
         #self.policy.to_cuda()
         self.policy.set_pc_idx(False)
         self.policy.unfreeze_pointnet()
-        observations = np.concatenate([path["observations"] for path in self.expert_paths])
-        actions = np.concatenate([path["actions"] for path in self.expert_paths])
+        #################################################################
+        #################################################################
+        #################################################################
+        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38] + list(range(39, 50))
+        act_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29]
+        observations = np.concatenate([path["observations"][:, obs_indexes] for path in self.expert_paths])
+        actions = np.concatenate([path["actions"][:, act_indexes] for path in self.expert_paths])
+        #################################################################
+        #################################################################
+        #################################################################
+        # observations = np.concatenate([path["observations"] for path in self.expert_paths])
+        # actions = np.concatenate([path["actions"] for path in self.expert_paths])
         if transform_from_idx:
             observations = self.get_groundtruth_pointcloud(observations)
             random_idx = np.random.choice(observations.shape[0], num_samples)

@@ -90,12 +90,26 @@ class LFA(NPG):
         self.iter_count = 0.0
         self.use_eval_adv = use_eval_adv
         if save_logs: self.logger = DataLog()
+        ##############################################################
+        ##############################################################
+        ##############################################################
+        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38] + list(range(39, 50))
+        act_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29]
 
         for demo_path in demo_paths:
-            demo_obs = demo_path['observations']
+            demo_obs = demo_path['observations'][:, obs_indexes]
             obj_names = np.array([[self.policy.model.get_idx_from_emb(item[-self.num_pc*3:])] for item in demo_obs])
             demo_obs_with_key = np.concatenate((demo_obs[:, :-self.num_pc*3], obj_names), axis=1)
             demo_path['observations'] = demo_obs_with_key
+        ##############################################################
+        ##############################################################
+        ##############################################################
+
+        # for demo_path in demo_paths:
+        #     demo_obs = demo_path['observations']
+        #     obj_names = np.array([[self.policy.model.get_idx_from_emb(item[-self.num_pc*3:])] for item in demo_obs])
+        #     demo_obs_with_key = np.concatenate((demo_obs[:, :-self.num_pc*3], obj_names), axis=1)
+        #     demo_path['observations'] = demo_obs_with_key
 
 
     def compute_advantage(self, paths, demo_paths, gamma=0.995):
@@ -150,6 +164,16 @@ class LFA(NPG):
 
 
     def train_from_paths(self, paths):
+        ##############################################################
+        ##############################################################
+        ##############################################################
+        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38] + list(range(39, 50))
+        act_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29]
+
+        ##############################################################
+        ##############################################################
+        ##############################################################
+        
         self.buffer.add_data(paths)
 
         if not self.policy.has_frozen_pointnet:
@@ -172,8 +196,17 @@ class LFA(NPG):
             test_scores = [1 - (item / max(test_scores)) for item in test_scores]
             weight = np.concatenate([np.ones(demo_traj_len[i])*test_scores[i] for i in range(len(demo_traj_len))])
 
-            demo_obs = np.concatenate([path["observations"] for path in sampled_demo_paths])            
-            demo_act = np.concatenate([path["actions"] for path in sampled_demo_paths])
+            # demo_obs = np.concatenate([path["observations"] for path in sampled_demo_paths])            
+            # demo_act = np.concatenate([path["actions"] for path in sampled_demo_paths])
+            #####################################################################################################
+            #####################################################################################################
+            #####################################################################################################
+            demo_obs = np.concatenate([path["observations"][:, obs_indexes] for path in sampled_demo_paths])            
+            demo_act = np.concatenate([path["actions"][:, act_indexes] for path in sampled_demo_paths])
+            #####################################################################################################
+            #####################################################################################################
+            #####################################################################################################
+
             #demo_adv = self.lam_0 * (self.lam_1 ** self.iter_count) * np.ones(demo_obs.shape[0])
             discount_factor = (self.lam_1 ** self.iter_count)
             demo_adv = self.lam_0 * discount_factor * weight

@@ -23,6 +23,14 @@ class PCMLP:
         """
         self.n = env_spec.observation_dim  # number of states
         self.m = env_spec.action_dim  # number of actions
+        ##############################################################
+        ##############################################################
+        ##############################################################
+        # self.n = 38  # number of states
+        # self.m = 18  # number of actions
+        ##############################################################
+        ##############################################################
+        ##############################################################
         self.min_log_std = min_log_std
         self.has_frozen_pointnet = False
         #self.is_cuda = True
@@ -352,9 +360,18 @@ class MuNet(nn.Module):
 
         self.obs_dim = obs_dim
         self.act_dim = act_dim
+        # self.original_dim = original_dim
         self.pc_dim = pc_dim
         self.emb_dim = emb_dim
-        self.original_dim = original_dim
+        #########################################
+        #########################################
+        #########################################
+        # self.obs_dim = 38
+        # self.act_dim = 18
+        self.original_dim = 37
+        #########################################
+        #########################################
+        #########################################
         self.hidden_sizes = hidden_sizes
         self.set_transformations(in_shift, in_scale, out_shift, out_scale)
         self.use_pc_idx = use_pc_idx

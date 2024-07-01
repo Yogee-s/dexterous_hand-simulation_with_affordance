@@ -29,6 +29,13 @@ class SHAPENETPCRelocate(MujocoEnv):
         self.num_pc = num_pc
         self.rotate_pc = rotate_pc
         self.density = density
+        #############################################
+        #############################################
+        #############################################
+        self.num_act=18
+        #############################################
+        #############################################
+        #############################################
 
         self.num_category = {'bottle':75, 'can':75, 'remote':63, 'mug':58, 'camera': 78}
 
@@ -73,8 +80,16 @@ class SHAPENETPCRelocate(MujocoEnv):
         self.sim.forward()
         self.sim.set_state(self.sim_state_initial)
         self.sim.forward()
-        self.sim.data.qpos[30] = self.np_random.uniform(low=0.15, high=0.15) * self.randomness_scale - 0.1
-        self.sim.data.qpos[31] = self.np_random.uniform(low=-0.15, high=0.15) * self.randomness_scale
+        # self.sim.data.qpos[30] = self.np_random.uniform(low=0.15, high=0.15) * self.randomness_scale - 0.1
+        # self.sim.data.qpos[31] = self.np_random.uniform(low=-0.15, high=0.15) * self.randomness_scale
+        ##############################################################################################################
+        ##############################################################################################################
+        ##############################################################################################################
+        self.sim.data.qpos[self.num_act] = self.np_random.uniform(low=0.15, high=0.15) * self.randomness_scale - 0.1
+        self.sim.data.qpos[self.num_act+1] = self.np_random.uniform(low=-0.15, high=0.15) * self.randomness_scale
+        ##############################################################################################################
+        ##############################################################################################################
+        ##############################################################################################################
         self.mjpy_model.body_pos[self.target_object_bid, 0] = self.np_random.uniform(low=-0.30, high=0.10)
         self.mjpy_model.body_pos[self.target_object_bid, 1] = self.np_random.uniform(low=-0.15, high=0.15)
         self.mjpy_model.body_pos[self.target_object_bid, 2] = self.np_random.uniform(low=0.15, high=0.25)
@@ -97,11 +112,25 @@ class SHAPENETPCRelocate(MujocoEnv):
         obj_pos = self.data.body_xpos[self.obj_bid].ravel()
         palm_pos = self.data.site_xpos[self.S_grasp_sid].ravel()
         target_pos = self.data.body_xpos[self.target_object_bid].ravel()
-        original_obs =  np.concatenate([qp[:30], palm_pos - obj_pos, palm_pos - target_pos, obj_pos - target_pos])
-        
+        # original_obs =  np.concatenate([qp[:30], palm_pos - obj_pos, palm_pos - target_pos, obj_pos - target_pos])
+        ########################################################################################################################
+        ########################################################################################################################
+        ########################################################################################################################
+        original_obs =  np.concatenate([qp[:self.num_act], palm_pos - obj_pos, palm_pos - target_pos, obj_pos - target_pos])
+        ########################################################################################################################
+        ########################################################################################################################
+        ########################################################################################################################
+
         quat = self.sim.get_state()[1][-4:]
         r = transforms3d.quaternions.quat2mat(quat)
-        t = self.sim.get_state()[1][30:33]
+        # t = self.sim.get_state()[1][30:33]
+        ##############################################################
+        ##############################################################
+        ##############################################################
+        t = self.sim.get_state()[1][self.num_act:self.num_act+3]
+        ##############################################################
+        ##############################################################
+        ##############################################################
        
         bbox_now = (np.matmul(self.bbox_original, r[:3,:3].T) + t).ravel()
 
@@ -109,6 +138,10 @@ class SHAPENETPCRelocate(MujocoEnv):
         #sampled_pointcloud_original = self.pointcloud_original[random_idx, :]
         # set not rotating pc as the only option
         #return np.concatenate([original_obs, quat, bbox_now, self.sampled_pointcloud])
+        # print(f"len of original_obs={len(original_obs)}")
+        # print(f"len of quat={len(quat)}")
+        # print(f"len of bbox_now={len(bbox_now)}")
+        # print(f"len of quat={len([float(self.object_name)])}")
         return np.concatenate([original_obs, quat, bbox_now, [float(self.object_name)]])
 
     def set_target_robot_pos(self,target_robot_pos):
@@ -152,7 +185,15 @@ class SHAPENETPCRelocate(MujocoEnv):
     def _load_model(self):
         arena = TableArena(table_full_size=(1.2, 1.2, 0.05), table_friction=(1, 0.5, 0.01), table_offset=(0, 0, 1.0),
                            bottom_pos=(0, 0, -1), has_legs=True)
-        xml_file = xml_path_completion("adroit/adroit_relocate.xml")
+        #################################################################################
+        #################################################################################
+        #################################################################################
+        # xml_file = xml_path_completion("adroit/adroit_relocate.xml")
+        xml_file = xml_path_completion("inspire/urdf/handright9253.xml")
+        #################################################################################
+        #################################################################################
+        #################################################################################
+
         robot = MujocoXML(xml_file)
         mesh_list = find_elements(robot.worldbody[0], tags="geom", return_first=False)
         robot_geom_names = [geom.get("name", "") for geom in mesh_list]
@@ -244,7 +285,14 @@ class SHAPENETPCRelocate(MujocoEnv):
         """
         qp = self.sim.data.qpos.ravel().copy()
         qv = self.sim.data.qvel.ravel().copy()
-        hand_qpos = qp[:30]
+        # hand_qpos = qp[:30]
+        ######################################################
+        ######################################################
+        ######################################################
+        hand_qpos = qp[:self.num_act]
+        ######################################################
+        ######################################################
+        ######################################################
         obj_pos = self.sim.data.body_xpos[self.obj_bid].ravel()
         palm_pos = self.sim.data.site_xpos[self.S_grasp_sid].ravel()
         target_pos = self.sim.data.site_xpos[self.target_object_bid].ravel()
