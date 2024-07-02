@@ -33,11 +33,12 @@ class BC:
         #################################################################
         #################################################################
         #################################################################
-        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29] + list(range(30, 50))
-        print(f"length of obs_indexes is:{len(obs_indexes)}")
+        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38]
+        # print(f"length of obs_indexes is:{len(obs_indexes)}")
         act_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29]
         # get transformations
-        observations = np.concatenate([path["observations"][:, obs_indexes] for path in expert_paths])
+        # observations = np.concatenate([path["observations"][:, obs_indexes] for path in expert_paths])
+        observations = np.concatenate([np.concatenate([path["observations"][:, obs_indexes],path["observations"][:, 39:]], axis=1) for path in self.expert_paths])
         actions = np.concatenate([path["actions"][:, act_indexes] for path in expert_paths])
         in_shift, in_scale = np.mean(observations, axis=0), np.std(observations, axis=0)
         out_shift, out_scale = np.mean(actions, axis=0), np.std(actions, axis=0)
@@ -137,9 +138,9 @@ class BC:
         #################################################################
         #################################################################
         #################################################################
-        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38] + list(range(39, 50))
+        obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38]
         act_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29]
-        observations = np.concatenate([path["observations"][:, obs_indexes] for path in self.expert_paths])
+        observations = np.concatenate([np.concatenate([path["observations"][:, obs_indexes],path["observations"][:, 39:]], axis=1) for path in self.expert_paths])
         actions = np.concatenate([path["actions"][:, act_indexes] for path in self.expert_paths])
         #################################################################
         #################################################################
