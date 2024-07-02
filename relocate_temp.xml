@@ -35,7 +35,7 @@
         
         <texture builtin="flat" height="512" name="textable" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5" width="512" />
         <material name="table_mat" texture="textable" />
-    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0036/model_transform_scaled.stl" name="0036_visual_mesh" scale="1 1 1" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0036/1.stl" name="0036_collision_mesh_1" scale="1 1 1" /></asset>
+    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0018/model_transform_scaled.stl" name="0018_visual_mesh" scale="1 1 1" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0018/1.stl" name="0018_collision_mesh_1" scale="1 1 1" /></asset>
         
         <worldbody>
                 <body name="forearm" pos="0 -0.7 0.2" quat="0.000563312 -0.000562864 0.706825 0.707388">
@@ -186,7 +186,7 @@
         <camera mode="fixed" name="frontview" pos="0 -1 0.9" quat="0.65 0.2705981, 0.2705981, 0.6532815" />
         <camera mode="fixed" name="backview" pos="0 0.6 0.9" quat="0 0 0.2815 0.9595" />
         <camera mode="fixed" name="sideview" pos="-1.3 -0.5 0.5" quat=" 0.6781121 0.5164697 -0.3290275 -0.4064037" />
-    <body name="0036_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0036_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0036_collision_mesh_1" name="collision_0036_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0036_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0036_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
+    <body name="0018_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0018_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0018_collision_mesh_1" name="collision_0018_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0018_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0018_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
 
         <contact>
                 <pair condim="1" geom1="C_thumb_distal" geom2="C_hand" />
