@@ -71,6 +71,7 @@ class LFA(NPG):
         self.num_pc = num_pc
         self.dapg_baseline = dapg_baseline
         self.device = torch.device("cuda" if torch.cuda.is_available() and use_cuda else "cpu")
+        print(f"cuda available is: {torch.cuda.is_available()}")
         self.bc_finetune = bc_finetune
         self.bc_agent = bc_agent
         self.priority = priority
@@ -95,9 +96,16 @@ class LFA(NPG):
         #################################################################
         #################################################################
         #################################################################
+        # obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38]
+        # for demo_path in demo_paths:
+        #     demo_obs = np.concatenate([np.concatenate([demo_path["observations"][:, obs_indexes],demo_path["observations"][:, 39:]], axis=1)])
+        #     obj_names = np.array([[self.policy.model.get_idx_from_emb(item[-self.num_pc*3:])] for item in demo_obs])
+        #     demo_obs_with_key = np.concatenate((demo_obs[:, :-self.num_pc*3], obj_names), axis=1)
+        #     demo_path['observations'] = demo_obs_with_key
+
         obs_indexes = [0, 1, 2, 3, 4, 5, 9, 10, 13, 14, 17, 18, 22, 23, 25, 26, 28, 29,30,31,32,33,34,35,36,37,38]
         for demo_path in demo_paths:
-            demo_obs = np.concatenate([np.concatenate([demo_path["observations"][:, obs_indexes],demo_path["observations"][:, 39:]], axis=1)])
+            demo_obs = np.concatenate([demo_path["observations"][:, obs_indexes]])
             obj_names = np.array([[self.policy.model.get_idx_from_emb(item[-self.num_pc*3:])] for item in demo_obs])
             demo_obs_with_key = np.concatenate((demo_obs[:, :-self.num_pc*3], obj_names), axis=1)
             demo_path['observations'] = demo_obs_with_key
@@ -182,15 +190,15 @@ class LFA(NPG):
         #####################################################################################################
         #####################################################################################################
         # Concatenate from all the trajectories
-        observations = np.concatenate([np.concatenate([path["observations"][:, obs_indexes],path["observations"][:, 39:]], axis=0) for path in paths])    
-
-        actions = np.concatenate([path["actions"][:, act_indexes] for path in paths])
+        # observations = np.concatenate([np.concatenate([path["observations"][:, obs_indexes],path["observations"][:, 39:]], axis=1) for path in paths])    
+        # observations = np.concatenate([path["observations"][:, obs_indexes] for path in paths])
+        # actions = np.concatenate([path["actions"][:, act_indexes] for path in paths])
         #####################################################################################################
         #####################################################################################################
         #####################################################################################################
         # Concatenate from all the trajectories
-        # observations = np.concatenate([path["observations"] for path in paths])
-        # actions = np.concatenate([path["actions"] for path in paths])
+        observations = np.concatenate([path["observations"] for path in paths])
+        actions = np.concatenate([path["actions"] for path in paths])
 
         advantages = np.concatenate([path["advantages"] for path in paths])
         advantages = (advantages - np.mean(advantages)) / (np.std(advantages) + 1e-6)
@@ -213,8 +221,9 @@ class LFA(NPG):
             #####################################################################################################
             #####################################################################################################
             demo_obs = np.concatenate([np.concatenate([path["observations"][:, obs_indexes],path["observations"][:, 39:]], axis=1) for path in sampled_demo_paths])    
-
             demo_act = np.concatenate([path["actions"][:, act_indexes] for path in sampled_demo_paths])
+            # demo_obs = np.concatenate([path["observations"][:, obs_indexes] for path in sampled_demo_paths])            
+            # demo_act = np.concatenate([path["actions"][:, act_indexes] for path in sampled_demo_paths])
             #####################################################################################################
             #####################################################################################################
             #####################################################################################################

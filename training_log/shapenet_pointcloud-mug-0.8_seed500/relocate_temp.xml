@@ -5,8 +5,6 @@
         <size nconmax="500" njmax="2000" nstack="600000" />
         
         <default /><asset>
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/forearm_simple.stl" name="forearm_simple" scale="1 1 1" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/wrist.stl" name="wrist" scale="0.001 0.001 0.001" />
                 <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_hand_base_link.STL" name="R_hand_base_link" />
                 <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_proximal_base.STL" name="R_thumb_proximal_base" />
                 <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_proximal.STL" name="R_thumb_proximal" />
@@ -35,136 +33,123 @@
         
         <texture builtin="flat" height="512" name="textable" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5" width="512" />
         <material name="table_mat" texture="textable" />
-    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0039/model_transform_scaled.stl" name="0039_visual_mesh" scale="0.8 0.8 0.8" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0039/1.stl" name="0039_collision_mesh_1" scale="0.8 0.8 0.8" /></asset>
+    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0036/model_transform_scaled.stl" name="0036_visual_mesh" scale="0.8 0.8 0.8" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0036/1.stl" name="0036_collision_mesh_1" scale="0.8 0.8 0.8" /></asset>
         
         <worldbody>
-                <body name="forearm" pos="0 -0.7 0.2" quat="0.000563312 -0.000562864 0.706825 0.707388">
-                        <inertial diaginertia="0.01 0.01 0.0075" mass="0.05" pos="-0.5 -0.8 0.9" quat="0.982037 -0.0160006 0 -0.188007" />
-                        <joint armature="0.001" axis="1 0 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTx" pos="0 0 0" range="-0.25 0.25" type="slide" />
-                        <joint armature="0.001" axis="0 1 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTy" pos="0 0 0" range="-0.75 0.75" type="slide" />
-                        <joint armature="0.001" axis="0 0 1" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTz" pos="0 0 0" range="-0.3 0.5" type="slide" />
-                        <joint armature="0.001" axis="1 0 0" damping="30" frictionloss="0.001" limited="true" margin="0.01" name="ARRx" pos="0 0 0" range="-0.75 0.75" />
-                        <joint armature="0.001" axis="0 1 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARRy" pos="0 0 0" range="-0.75 0.75" />
-                        <joint armature="0.001" axis="0 0 1" damping="35" frictionloss="0.01" limited="true" margin="0.01" name="ARRz" pos="0 0 0" range="-0.75 0.75" />
-                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="forearm_simple" name="V_forearm" pos="0 -0.01 0.181" quat="0.707388 0 0 -0.706825" type="mesh" />
-                        <geom conaffinity="1" contype="1" friction="1 0.5 0.01" group="4" margin="0.0001" name="C_forearm1" pos="0 0 0.29" rgba="0.4 0.5 0.6 0.1" size="0.08 0.053" type="capsule" />
+                <body name="hand" pos="-0.47 -0.75 -0.5">
+                        <inertial diaginertia="0.01 0.01 0.0075" mass="3" pos="0.42 0.5 0.75" quat="0.982037 -0.0160006 0 -0.188007" />
+                        <joint armature="0.001" axis="-1 0 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTx" pos="0.42 0.4 0.75" range="-0.75 0.75" type="slide" />
+                        <joint armature="0.001" axis="0 0 1" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTy" pos="0.42 0.4 0.75" range="-0.75 0.75" type="slide" />
+                        <joint armature="0.001" axis="0 1 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTz" pos="0.42 0.4 0.75" range="-0.75 0.75" type="slide" /> 
+                        <joint armature="0.001" axis="-1 0 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARRx" pos="0.42 0.42 0.75" range="-2.75 2.75" />
+                        <joint armature="0.001" axis="0 0 1" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARRy" pos="0.42 0.42 0.75" range="-2.75 2.75" />
+                        <joint armature="0.001" axis="0 1 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARRz" pos="0.42 0.42 0.75" range="-2.75 2.75" /> 
 
-                        <body name="wrist" pos="0 0 0.396">
-                                <inertial diaginertia="0.001 0.001 0.001" mass="0.2" pos="0.003 0 0.016" quat="0.504234 0.49623 0.49523 0.504234" />
+                        <geom conaffinity="1" contype="1" friction="1 0.5 0.01" group="4" margin="0.0001" mesh="R_hand_base_link" name="C_hand" pos="0.5 0.5 0.5" quat="0.707107 -0.707107 0 0" rgba="1 1 1 1" type="mesh" />
+                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_hand_base_link" name="V_hand" pos="0.5 0.5 0.5" quat="0.707107 -0.707107 0 0" rgba="1 1 1 1" type="mesh" />
 
-                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="wrist" name="V_wrist" type="mesh" />
-                                <geom conaffinity="1" contype="1" friction="1 0.5 0.01" group="4" margin="0.0001" name="C_wrist" quat="0.707107 0.707107 0 0" rgba="0.4 0.5 0.6 0.1" size="0.025 0.02" type="capsule" />
+                        <site name="S_grasp" pos="0.007 -0.05 0.07" quat="0.00863043 -0.595202 -0.00337281 -0.803523" rgba="0 0 0 0" size="0.01" />
+                        
+                                
+                        <body name="R_thumb_proximal_base" pos="0.401367 0.488636 0.73173" quat="0.990013 1.83152e-06 -0.140974 2.57024e-07">
+                                <inertial diaginertia="8.66028e-08 6.87321e-08 4.94192e-08" mass="0.0018869" pos="-0.0048772 -0.010163 0.00044069" quat="0.075637 0.631378 -0.107678 0.764229" />
+                                <joint armature="0.001" axis="0 -1 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_MCP_joint1" pos="0 0 0" range="0.2 1.3" />
+                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal_base" name="C_thumb_proximal_base" rgba="1 1 1 1" type="mesh" />
+                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal_base" name="V_thumb_proximal_base" rgba="1 1 1 1" type="mesh" />
+                                <body name="R_thumb_proximal" pos="-0.0115 -0.011843 0" quat="-0.6554345 0.2653441 -0.6554321 -0.2653431">
+                                        <inertial diaginertia="2.78601e-06 2.43932e-06 8.64597e-07" mass="0.0066075" pos="-3.8592e-05 0.02533 -0.0017007" quat="0.656826 0.754039 0.00146914 -0.00128614" />
+                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_MCP_joint2" pos="0 0 0" range="0 1.8" />
+                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal" name="C_thumb_proximal" rgba="1 1 1 1" type="mesh" />
+                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal" name="V_thumb_proximal" rgba="1 1 1 1" type="mesh" />
+                                        <site group="3" name="S_thumb_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                        <site group="4" name="Tch_thumb_bottom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
 
-                                <body name="hand" pos="0.425 -0.75 -0.4" quat="0.000563312 -0.000562864 0.706825 0.707388">  
-                                        <inertial diaginertia="0.01 0.01 0.0075" mass="0.5" pos="0 0 0" quat="0.982037 -0.0160006 0 -0.188007" />
-
-                                        <geom conaffinity="1" contype="1" friction="1 0.5 0.01" group="4" margin="0.0001" mesh="R_hand_base_link" name="C_hand" pos="0.5 0.5 0.5" quat="0.707107 -0.707107 0 0" rgba="1 1 1 1" type="mesh" />
-                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_hand_base_link" name="V_hand" pos="0.5 0.5 0.5" quat="0.707107 -0.707107 0 0" rgba="1 1 1 1" type="mesh" />
-
-                                        <site name="S_grasp" pos="0.007 -0.05 0.07" quat="0.00863043 -0.595202 -0.00337281 -0.803523" rgba="0 0 0 0" size="0.01" />
-                                        
-
-                                        <body name="R_thumb_proximal_base" pos="0.401367 0.488636 0.73173" quat="0.990013 1.83152e-06 -0.140974 2.57024e-07">
-                                                <inertial diaginertia="8.66028e-08 6.87321e-08 4.94192e-08" mass="0.0018869" pos="-0.0048772 -0.010163 0.00044069" quat="0.075637 0.631378 -0.107678 0.764229" />
-                                                <joint armature="0.001" axis="0 -1 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_MCP_joint1" pos="0 0 0" range="0.2 1.3" />
-                                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal_base" name="C_thumb_proximal_base" rgba="1 1 1 1" type="mesh" />
-                                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal_base" name="V_thumb_proximal_base" rgba="1 1 1 1" type="mesh" />
-                                                <body name="R_thumb_proximal" pos="-0.0115 -0.011843 0" quat="-0.6554345 0.2653441 -0.6554321 -0.2653431">
-                                                        <inertial diaginertia="2.78601e-06 2.43932e-06 8.64597e-07" mass="0.0066075" pos="-3.8592e-05 0.02533 -0.0017007" quat="0.656826 0.754039 0.00146914 -0.00128614" />
-                                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_MCP_joint2" pos="0 0 0" range="0 1.8" />
-                                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal" name="C_thumb_proximal" rgba="1 1 1 1" type="mesh" />
-                                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal" name="V_thumb_proximal" rgba="1 1 1 1" type="mesh" />
-                                                        <site group="3" name="S_thumb_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                        <site group="4" name="Tch_thumb_bottom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
-
-                                                        <body name="R_thumb_intermediate" pos="0 0.055863 0.0039241" quat="0.999817 -0.0191483 0 0">
-                                                                <inertial diaginertia="4.6531e-07 4.48088e-07 2.45662e-07" mass="0.0037847" pos="2.8437e-07 0.0072526 -0.0064293" quat="0.575988 0.817458 -0.000107087 6.96147e-05" />
-                                                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_PIP_joint" pos="0 0 0" range="0 1" />
-                                                                <geom conaffinity="1" contype="1" friction="1 0.5 0.01" group="4" margin="0.0001" mesh="R_thumb_intermediate" name="C_thumb_intermediate" rgba="1 1 1 1" type="mesh" />
-                                                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_intermediate" name="V_thumb_intermediate" rgba="1 1 1 1" type="mesh" />
-                                                                <body name="R_thumb_distal" pos="0 0.022558 -0.0020717" quat="0.999983 -0.00582097 0 0">
-                                                                        <inertial diaginertia="2.0026e-07 1.95252e-07 8.15973e-08" mass="0.0033441" pos="-3.3054e-06 0.010511 -0.00057863" quat="0.624404 0.781098 0.00147531 -0.00199963" />
-                                                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_DIP_joint" pos="0 0 0" range="0 1.2" />
-                                                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_distal" name="C_thumb_distal" rgba="1 1 1 1" type="mesh" />
-                                                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_distal" name="V_thumb_distal" rgba="1 1 1 1" type="mesh" />
-                                                                        <site group="3" name="S_thumb_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                                        <site group="4" name="Tch_thumb_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" /> 
-                                                                </body>
-                                                        </body>
+                                        <body name="R_thumb_intermediate" pos="0 0.055863 0.0039241" quat="0.999817 -0.0191483 0 0">
+                                                <inertial diaginertia="4.6531e-07 4.48088e-07 2.45662e-07" mass="0.0037847" pos="2.8437e-07 0.0072526 -0.0064293" quat="0.575988 0.817458 -0.000107087 6.96147e-05" />
+                                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_PIP_joint" pos="0 0 0" range="0 1" />
+                                                <geom conaffinity="1" contype="1" friction="1 0.5 0.01" group="4" margin="0.0001" mesh="R_thumb_intermediate" name="C_thumb_intermediate" rgba="1 1 1 1" type="mesh" />
+                                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_intermediate" name="V_thumb_intermediate" rgba="1 1 1 1" type="mesh" />
+                                                <body name="R_thumb_distal" pos="0 0.022558 -0.0020717" quat="0.999983 -0.00582097 0 0">
+                                                        <inertial diaginertia="2.0026e-07 1.95252e-07 8.15973e-08" mass="0.0033441" pos="-3.3054e-06 0.010511 -0.00057863" quat="0.624404 0.781098 0.00147531 -0.00199963" />
+                                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_DIP_joint" pos="0 0 0" range="0 1.2" />
+                                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_distal" name="C_thumb_distal" rgba="1 1 1 1" type="mesh" />
+                                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_distal" name="V_thumb_distal" rgba="1 1 1 1" type="mesh" />
+                                                        <site group="3" name="S_thumb_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                                        <site group="4" name="Tch_thumb_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" /> 
                                                 </body>
                                         </body>
+                                </body>
+                        </body>
 
-                                        <body name="R_index_proximal" pos="0.405441 0.554025 0.74897" quat="-0.00212755 -0.0173224 0.992416 0.121677">
-                                                <inertial diaginertia="6.9398e-07 6.62877e-07 2.10913e-07" mass="0.0042403" pos="0.0099008 0.011884 0.0016958" quat="0.629448 0.777042 2.20645e-05 -2.45535e-05" />
-                                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_index_MCP_joint" pos="0 0 0" range="0 1.7" />
-                                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_proximal" name="C_index_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_proximal" name="V_index_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <site group="3" name="S_index_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                <site group="4" name="Tch_index_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
+                        <body name="R_index_proximal" pos="0.405441 0.554025 0.74897" quat="-0.00212755 -0.0173224 0.992416 0.121677">
+                                <inertial diaginertia="6.9398e-07 6.62877e-07 2.10913e-07" mass="0.0042403" pos="0.0099008 0.011884 0.0016958" quat="0.629448 0.777042 2.20645e-05 -2.45535e-05" />
+                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_index_MCP_joint" pos="0 0 0" range="0 1.7" />
+                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_proximal" name="C_index_proximal" rgba="1 1 1 1" type="mesh" />
+                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_proximal" name="V_index_proximal" rgba="1 1 1 1" type="mesh" />
+                                <site group="3" name="S_index_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                <site group="4" name="Tch_index_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
 
-                                                <body name="R_index_distal" pos="0.001575 0.030445 0.010275" quat="0.999755 0.0221422 0 0">
-                                                        <inertial diaginertia="7.8179e-07 7.72465e-07 8.47248e-08" mass="0.0045683" pos="0.0083258 0.019591 0.0019565" quat="0.581929 0.813239 4.32051e-07 6.03786e-07" />
-                                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_index_DIP_joint" pos="0 0 0" range="0 1.6" />
-                                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_distal" name="C_index_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_distal" name="V_index_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <site group="3" name="S_index_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                        <site group="4" name="Tch_index_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />  
-                                                </body>
-                                        </body>
+                                <body name="R_index_distal" pos="0.001575 0.030445 0.010275" quat="0.999755 0.0221422 0 0">
+                                        <inertial diaginertia="7.8179e-07 7.72465e-07 8.47248e-08" mass="0.0045683" pos="0.0083258 0.019591 0.0019565" quat="0.581929 0.813239 4.32051e-07 6.03786e-07" />
+                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_index_DIP_joint" pos="0 0 0" range="0 1.6" />
+                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_distal" name="C_index_distal" rgba="1 1 1 1" type="mesh" />
+                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_index_distal" name="V_index_distal" rgba="1 1 1 1" type="mesh" />
+                                        <site group="3" name="S_index_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                        <site group="4" name="Tch_index_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />  
+                                </body>
+                        </body>
 
-                                        <body name="R_middle_proximal" pos="0.422932 0.554042 0.74897" quat="-3.64455e-06 4.57949e-07 0.992198 0.124673">
-                                                <inertial diaginertia="6.9397e-07 6.62866e-07 2.10914e-07" mass="0.0042403" pos="0.008065 0.011884 0.0016958" quat="0.629448 0.777042 2.15784e-05 -2.62734e-05" />
-                                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_middle_MCP_joint" pos="0 0 0" range="0 1.7" />
-                                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_proximal" name="C_middle_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_proximal" name="V_middle_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <site group="3" name="S_middle_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                <site group="4" name="Tch_middle_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
+                        <body name="R_middle_proximal" pos="0.422932 0.554042 0.74897" quat="-3.64455e-06 4.57949e-07 0.992198 0.124673">
+                                <inertial diaginertia="6.9397e-07 6.62866e-07 2.10914e-07" mass="0.0042403" pos="0.008065 0.011884 0.0016958" quat="0.629448 0.777042 2.15784e-05 -2.62734e-05" />
+                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_middle_MCP_joint" pos="0 0 0" range="0 1.7" />
+                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_proximal" name="C_middle_proximal" rgba="1 1 1 1" type="mesh" />
+                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_proximal" name="V_middle_proximal" rgba="1 1 1 1" type="mesh" />
+                                <site group="3" name="S_middle_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                <site group="4" name="Tch_middle_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
 
-                                                <body name="R_middle_distal" pos="0.0016673 0.030445 0.010275" quat="0.999363 0.0356989 0 0">
-                                                        <inertial diaginertia="9.8384e-07 9.73281e-07 9.13985e-08" mass="0.0050396" pos="0.0063978 0.020807 0.0018039" quat="0.589614 0.807685 -6.23875e-05 4.98373e-05" />
-                                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_middle_DIP_joint" pos="0 0 0" range="0 1.6" />
-                                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_distal" name="C_middle_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_distal" name="V_middle_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <site group="3" name="S_middle_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                        <site group="4" name="Tch_middle_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />  
-                                                </body>
-                                        </body>
+                                <body name="R_middle_distal" pos="0.0016673 0.030445 0.010275" quat="0.999363 0.0356989 0 0">
+                                        <inertial diaginertia="9.8384e-07 9.73281e-07 9.13985e-08" mass="0.0050396" pos="0.0063978 0.020807 0.0018039" quat="0.589614 0.807685 -6.23875e-05 4.98373e-05" />
+                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_middle_DIP_joint" pos="0 0 0" range="0 1.6" />
+                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_distal" name="C_middle_distal" rgba="1 1 1 1" type="mesh" />
+                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_middle_distal" name="V_middle_distal" rgba="1 1 1 1" type="mesh" />
+                                        <site group="3" name="S_middle_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                        <site group="4" name="Tch_middle_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />  
+                                </body>
+                        </body>
 
-                                        <body name="R_ring_proximal" pos="0.442106 0.553119 0.74897" quat="0.00325992 0.0259732 0.991858 0.12463">
-                                                <inertial diaginertia="6.9397e-07 6.62866e-07 2.10914e-07" mass="0.0042403" pos="0.0080207 0.011884 0.0016959" quat="0.629449 0.777042 1.88154e-05 -2.40552e-05" />
-                                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_ring_MCP_joint" pos="0 0 0" range="0 1.7" />
-                                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_proximal" name="C_ring_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_proximal" name="V_ring_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <site group="3" name="S_ring_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                <site group="4" name="Tch_ring_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
+                        <body name="R_ring_proximal" pos="0.442106 0.553119 0.74897" quat="0.00325992 0.0259732 0.991858 0.12463">
+                                <inertial diaginertia="6.9397e-07 6.62866e-07 2.10914e-07" mass="0.0042403" pos="0.0080207 0.011884 0.0016959" quat="0.629449 0.777042 1.88154e-05 -2.40552e-05" />
+                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_ring_MCP_joint" pos="0 0 0" range="0 1.7" />
+                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_proximal" name="C_ring_proximal" rgba="1 1 1 1" type="mesh" />
+                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_proximal" name="V_ring_proximal" rgba="1 1 1 1" type="mesh" />
+                                <site group="3" name="S_ring_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                <site group="4" name="Tch_ring_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
 
-                                                <body name="R_ring_distal" pos="0 0.030445 0.010275" quat="0.999803 0.0198727 0 0">
-                                                        <inertial diaginertia="7.8177e-07 7.72447e-07 8.47227e-08" mass="0.0045683" pos="0.0080209 0.019591 0.0019565" quat="0.581926 0.813242 0 0" />
-                                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_ring_DIP_joint" pos="0 0 0" range="0 1.6" />
-                                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_distal" name="C_ring_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_distal" name="V_ring_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <site group="3" name="S_ring_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                        <site group="4" name="Tch_ring_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
-                                                </body>
-                                        </body>
+                                <body name="R_ring_distal" pos="0 0.030445 0.010275" quat="0.999803 0.0198727 0 0">
+                                        <inertial diaginertia="7.8177e-07 7.72447e-07 8.47227e-08" mass="0.0045683" pos="0.0080209 0.019591 0.0019565" quat="0.581926 0.813242 0 0" />
+                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_ring_DIP_joint" pos="0 0 0" range="0 1.6" />
+                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_distal" name="C_ring_distal" rgba="1 1 1 1" type="mesh" />
+                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_ring_distal" name="V_ring_distal" rgba="1 1 1 1" type="mesh" />
+                                        <site group="3" name="S_ring_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                        <site group="4" name="Tch_ring_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
+                                </body>
+                        </body>
 
-                                        <body name="R_pinky_proximal" pos="0.461118 0.551205 0.74897" quat="-0.00652853 -0.0519273 -0.990838 -0.124502">
-                                                <inertial diaginertia="6.9397e-07 6.62866e-07 2.10914e-07" mass="0.0042403" pos="0.0078887 0.011884 0.0016959" quat="0.629449 0.777042 2.01737e-05 -2.54775e-05" />
-                                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_pinky_MCP_joint" pos="0 0 0" range="0 1.7" />
-                                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_proximal" name="C_pinky_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_proximal" name="V_pinky_proximal" rgba="1 1 1 1" type="mesh" />
-                                                <site group="3" name="S_pinky_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                <site group="4" name="Tch_pinky_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
+                        <body name="R_pinky_proximal" pos="0.461118 0.551205 0.74897" quat="-0.00652853 -0.0519273 -0.990838 -0.124502">
+                                <inertial diaginertia="6.9397e-07 6.62866e-07 2.10914e-07" mass="0.0042403" pos="0.0078887 0.011884 0.0016959" quat="0.629449 0.777042 2.01737e-05 -2.54775e-05" />
+                                <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_pinky_MCP_joint" pos="0 0 0" range="0 1.7" />
+                                <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_proximal" name="C_pinky_proximal" rgba="1 1 1 1" type="mesh" />
+                                <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_proximal" name="V_pinky_proximal" rgba="1 1 1 1" type="mesh" />
+                                <site group="3" name="S_pinky_bottom" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                <site group="4" name="Tch_pinky_botom" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
 
-                                                <body name="R_pinky_distal" pos="0 0.030445 0.010275" quat="0.999822 -0.0188444 0 0">
-                                                        <inertial diaginertia="4.4867e-07 4.43716e-07 6.56536e-08" mass="0.0035996" pos="0.0078857 0.016239 0.0022243" quat="0.553304 0.832968 0.0036878 -0.00236477" />
-                                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_pinky_DIP_joint" pos="0 0 0" range="0 1.6" />
-                                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_distal" name="C_pinky_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_distal" name="V_pinky_distal" rgba="1 1 1 1" type="mesh" />
-                                                        <site group="3" name="S_pinky_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
-                                                        <site group="4" name="Tch_pinky_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
-                                                </body>
-                                        </body>
+                                <body name="R_pinky_distal" pos="0 0.030445 0.010275" quat="0.999822 -0.0188444 0 0">
+                                        <inertial diaginertia="4.4867e-07 4.43716e-07 6.56536e-08" mass="0.0035996" pos="0.0078857 0.016239 0.0022243" quat="0.553304 0.832968 0.0036878 -0.00236477" />
+                                        <joint armature="0.001" axis="1 0 0" damping="0.05" frictionloss="0.001" limited="true" name="R_pinky_DIP_joint" pos="0 0 0" range="0 1.6" />
+                                        <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_distal" name="C_pinky_distal" rgba="1 1 1 1" type="mesh" />
+                                        <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_pinky_distal" name="V_pinky_distal" rgba="1 1 1 1" type="mesh" />
+                                        <site group="3" name="S_pinky_tip" pos="0 0 0.026" rgba="0.4 0.9 0.4 1" size="0.005 0 0" />
+                                        <site group="4" name="Tch_pinky_tip" pos="0 -0.004 0.018" rgba="0.8 0.8 0.8 0.15" size="0.009 0.004 0.013" type="box" />   
                                 </body>
                         </body>
                 </body>
@@ -186,7 +171,7 @@
         <camera mode="fixed" name="frontview" pos="0 -1 0.9" quat="0.65 0.2705981, 0.2705981, 0.6532815" />
         <camera mode="fixed" name="backview" pos="0 0.6 0.9" quat="0 0 0.2815 0.9595" />
         <camera mode="fixed" name="sideview" pos="-1.3 -0.5 0.5" quat=" 0.6781121 0.5164697 -0.3290275 -0.4064037" />
-    <body name="0039_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0039_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0039_collision_mesh_1" name="collision_0039_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0039_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0039_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
+    <body name="0036_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0036_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0036_collision_mesh_1" name="collision_0036_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0036_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0036_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
 
         <contact>
                 <pair condim="1" geom1="C_thumb_distal" geom2="C_hand" />
@@ -230,13 +215,13 @@
 
 
         <actuator>
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.8 0.8" gainprm="80 0 0 0 0 0 0 0 0 0" joint="ARTx" name="A_ARTx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.8 0.8" gainprm="80 0 0 0 0 0 0 0 0 0" joint="ARTy" name="A_ARTy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.8 0.8" gainprm="80 0 0 0 0 0 0 0 0 0" joint="ARTz" name="A_ARTz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 0.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTx" name="A_ARTx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTy" name="A_ARTy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 0.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTz" name="A_ARTz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
 
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-1.75 1.75" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRx" name="A_ARRx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-1.75 1.75" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRy" name="A_ARRy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -150 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-1.75 1.75" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRz" name="A_ARRz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.4 0.4" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRx" name="A_ARRx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.25 0.25" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRy" name="A_ARRy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 0.75" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRz" name="A_ARRz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
 
 
                 <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1.1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_index_MCP_joint" name="index" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
@@ -285,7 +270,7 @@
                 <touch name="ST_Tch_ring_botom" site="Tch_ring_botom" />
                 <touch name="ST_Tch_pinky_botom" site="Tch_pinky_botom" />
                 <touch name="ST_Tch_thumb_bottom" site="Tch_thumb_bottom" />
-                
+
 
                 <jointpos joint="R_index_MCP_joint" name="Sjp_index" />
                 <jointpos joint="R_index_DIP_joint" name="Sjp_index_tip" />
