@@ -138,23 +138,10 @@ class SHAPENETPCRelocate(MujocoEnv):
         #sampled_pointcloud_original = self.pointcloud_original[random_idx, :]
         # set not rotating pc as the only option
         #return np.concatenate([original_obs, quat, bbox_now, self.sampled_pointcloud])
-        
-        ####################################################
-        ####################################################
-        ####################################################
-        # len of original_obs=27
-        # len of quat=4
-        # len of bbox_now=6
-        # len of quat=1
-        # observation dim: 38, action dim: 18
         # print(f"len of original_obs={len(original_obs)}")
         # print(f"len of quat={len(quat)}")
         # print(f"len of bbox_now={len(bbox_now)}")
         # print(f"len of quat={len([float(self.object_name)])}")
-        ####################################################
-        ####################################################
-        ####################################################
-
         return np.concatenate([original_obs, quat, bbox_now, [float(self.object_name)]])
 
     def set_target_robot_pos(self,target_robot_pos):
