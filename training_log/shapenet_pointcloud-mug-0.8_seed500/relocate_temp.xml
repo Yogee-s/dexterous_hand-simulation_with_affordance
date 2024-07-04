@@ -33,14 +33,14 @@
         
         <texture builtin="flat" height="512" name="textable" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5" width="512" />
         <material name="table_mat" texture="textable" />
-    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0036/model_transform_scaled.stl" name="0036_visual_mesh" scale="0.8 0.8 0.8" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0036/1.stl" name="0036_collision_mesh_1" scale="0.8 0.8 0.8" /></asset>
+    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0039/model_transform_scaled.stl" name="0039_visual_mesh" scale="0.8 0.8 0.8" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0039/1.stl" name="0039_collision_mesh_1" scale="0.8 0.8 0.8" /></asset>
         
         <worldbody>
                 <body name="hand" pos="-0.47 -0.75 -0.5">
-                        <inertial diaginertia="0.01 0.01 0.0075" mass="3" pos="0.42 0.5 0.75" quat="0.982037 -0.0160006 0 -0.188007" />
-                        <joint armature="0.001" axis="-1 0 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTx" pos="0.42 0.4 0.75" range="-0.75 0.75" type="slide" />
+                        <inertial diaginertia="0.01 0.01 0.0075" mass="2" pos="0.42 0.5 0.75" quat="0.982037 -0.0160006 0 -0.188007" />
+                        <joint armature="0.001" axis="-1 0 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTx" pos="0.82 0.4 0.75" range="-0.75 0.75" type="slide" />
                         <joint armature="0.001" axis="0 0 1" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTy" pos="0.42 0.4 0.75" range="-0.75 0.75" type="slide" />
-                        <joint armature="0.001" axis="0 1 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTz" pos="0.42 0.4 0.75" range="-0.75 0.75" type="slide" /> 
+                        <joint armature="0.001" axis="0 1 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARTz" pos="0.42 0.4 0.75" range="-1.75 1.75" type="slide" /> 
                         <joint armature="0.001" axis="-1 0 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARRx" pos="0.42 0.42 0.75" range="-2.75 2.75" />
                         <joint armature="0.001" axis="0 0 1" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARRy" pos="0.42 0.42 0.75" range="-2.75 2.75" />
                         <joint armature="0.001" axis="0 1 0" damping="20" frictionloss="0.001" limited="true" margin="0.01" name="ARRz" pos="0.42 0.42 0.75" range="-2.75 2.75" /> 
@@ -53,7 +53,7 @@
                                 
                         <body name="R_thumb_proximal_base" pos="0.401367 0.488636 0.73173" quat="0.990013 1.83152e-06 -0.140974 2.57024e-07">
                                 <inertial diaginertia="8.66028e-08 6.87321e-08 4.94192e-08" mass="0.0018869" pos="-0.0048772 -0.010163 0.00044069" quat="0.075637 0.631378 -0.107678 0.764229" />
-                                <joint armature="0.001" axis="0 -1 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_MCP_joint1" pos="0 0 0" range="0.2 1.3" />
+                                <joint armature="0.001" axis="0 -1 0" damping="0.05" frictionloss="0.001" limited="true" name="R_thumb_MCP_joint1" pos="0 0 0" range="-1.3 1.3" />
                                 <geom conaffinity="0" contype="0" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal_base" name="C_thumb_proximal_base" rgba="1 1 1 1" type="mesh" />
                                 <geom conaffinity="1" friction="1 0.5 0.01" group="1" margin="0.0001" mesh="R_thumb_proximal_base" name="V_thumb_proximal_base" rgba="1 1 1 1" type="mesh" />
                                 <body name="R_thumb_proximal" pos="-0.0115 -0.011843 0" quat="-0.6554345 0.2653441 -0.6554321 -0.2653431">
@@ -171,13 +171,13 @@
         <camera mode="fixed" name="frontview" pos="0 -1 0.9" quat="0.65 0.2705981, 0.2705981, 0.6532815" />
         <camera mode="fixed" name="backview" pos="0 0.6 0.9" quat="0 0 0.2815 0.9595" />
         <camera mode="fixed" name="sideview" pos="-1.3 -0.5 0.5" quat=" 0.6781121 0.5164697 -0.3290275 -0.4064037" />
-    <body name="0036_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0036_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0036_collision_mesh_1" name="collision_0036_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0036_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0036_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
+    <body name="0039_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0039_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0039_collision_mesh_1" name="collision_0039_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0039_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0039_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
 
         <contact>
                 <pair condim="1" geom1="C_thumb_distal" geom2="C_hand" />
                 <pair condim="1" geom1="C_thumb_intermediate" geom2="C_hand" />
                 <pair condim="1" geom1="C_thumb_proximal" geom2="C_hand" />
-                <pair condim="1" geom1="C_thumb_proximal_base" geom2="C_hand" />
+
 
                 
                 <pair condim="1" geom1="C_index_proximal" geom2="C_thumb_distal" />
@@ -216,30 +216,30 @@
 
         <actuator>
                 <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 0.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTx" name="A_ARTx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTy" name="A_ARTy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 0.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTz" name="A_ARTz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.4 0.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTy" name="A_ARTy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 1.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTz" name="A_ARTz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
 
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.4 0.4" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRx" name="A_ARRx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.3 0.3" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRx" name="A_ARRx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
                 <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.25 0.25" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRy" name="A_ARRy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 0.75" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRz" name="A_ARRz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.95 0.95" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRz" name="A_ARRz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
 
 
-                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1.1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_index_MCP_joint" name="index" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_index_MCP_joint" name="index" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
                 <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.25" gainprm="8 0 0 0 0 0 0 0 0 0" joint="R_index_DIP_joint" name="index_tip" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
 
-                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1.1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_middle_MCP_joint" name="middle" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_middle_MCP_joint" name="middle" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
                 <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.25" gainprm="8 0 0 0 0 0 0 0 0 0" joint="R_middle_DIP_joint" name="middle_tip" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
 
-                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1.1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_ring_MCP_joint" name="ring" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_ring_MCP_joint" name="ring" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
                 <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.25" gainprm="8 0 0 0 0 0 0 0 0 0" joint="R_ring_DIP_joint" name="ring_tip" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
 
-                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1.1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_pinky_MCP_joint" name="pinky" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1" gainprm="1.5 0 0 0 0 0 0 0 0 0" joint="R_pinky_MCP_joint" name="pinky" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
                 <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.25" gainprm="8 0 0 0 0 0 0 0 0 0" joint="R_pinky_DIP_joint" name="pinky_tip" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
 
 
 
-                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 2" joint="R_thumb_MCP_joint1" name="thumb_rotate" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
-                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1" joint="R_thumb_MCP_joint2" name="thumb_lower" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 1.2" joint="R_thumb_MCP_joint1" name="thumb_rotate" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
+                <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.2" joint="R_thumb_MCP_joint2" name="thumb_lower" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
                 <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.5" joint="R_thumb_PIP_joint" name="thumb_middle" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
                 <general biasprm="0 -1 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="0 0.5" joint="R_thumb_DIP_joint" name="thumb_tip" user="1002 0 2001 -0.1 0.1 0 0 0 0 0 0 0 0 0 0 0" />
 
