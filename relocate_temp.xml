@@ -5,35 +5,35 @@
         <size nconmax="500" njmax="2000" nstack="600000" />
         
         <default /><asset>
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_hand_base_link.STL" name="R_hand_base_link" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_proximal_base.STL" name="R_thumb_proximal_base" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_proximal.STL" name="R_thumb_proximal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_intermediate.STL" name="R_thumb_intermediate" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_distal.STL" name="R_thumb_distal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_index_proximal.STL" name="R_index_proximal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_index_distal.STL" name="R_index_distal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_middle_proximal.STL" name="R_middle_proximal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_middle_distal.STL" name="R_middle_distal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_ring_proximal.STL" name="R_ring_proximal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_ring_distal.STL" name="R_ring_distal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_pinky_proximal.STL" name="R_pinky_proximal" />
-                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_pinky_distal.STL" name="R_pinky_distal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_hand_base_link.STL" name="R_hand_base_link" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_proximal_base.STL" name="R_thumb_proximal_base" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_proximal.STL" name="R_thumb_proximal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_intermediate.STL" name="R_thumb_intermediate" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_thumb_distal.STL" name="R_thumb_distal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_index_proximal.STL" name="R_index_proximal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_index_distal.STL" name="R_index_distal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_middle_proximal.STL" name="R_middle_proximal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_middle_distal.STL" name="R_middle_distal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_ring_proximal.STL" name="R_ring_proximal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_ring_distal.STL" name="R_ring_distal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_pinky_proximal.STL" name="R_pinky_proximal" />
+                <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/inspire/urdf/../meshes/R_pinky_distal.STL" name="R_pinky_distal" />
         <texture builtin="gradient" height="256" rgb1=".9 .9 1." rgb2=".2 .3 .4" type="skybox" width="256" />
-        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/arenas/../textures/wood-tiles.png" name="texplane" type="2d" />
+        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/arenas/../textures/wood-tiles.png" name="texplane" type="2d" />
         <material name="floorplane" reflectance="0.01" shininess="0.0" specular="0.0" texrepeat="2 2" texture="texplane" texuniform="true" />
         
-        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/arenas/../textures/ceramic.png" name="tex-ceramic" type="cube" />
+        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/arenas/../textures/ceramic.png" name="tex-ceramic" type="cube" />
         <material name="table_ceramic" reflectance="0.0" shininess="0.0" specular="0.2" texrepeat="1 1" texture="tex-ceramic" />
         
-        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/arenas/../textures/steel-brushed.png" name="tex-steel-brushed" type="cube" />
+        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/arenas/../textures/steel-brushed.png" name="tex-steel-brushed" type="cube" />
         <material name="table_legs_metal" reflectance="0.8" shininess="0.8" texrepeat="1 1" texture="tex-steel-brushed" />
         
-        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/models/assets/arenas/../textures/cream-plaster.png" name="tex-cream-plaster" type="2d" />
+        <texture file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/models/assets/arenas/../textures/cream-plaster.png" name="tex-cream-plaster" type="2d" />
         <material name="walls_mat" reflectance="0.0" shininess="0.1" specular="0.1" texrepeat="3 3" texture="tex-cream-plaster" texuniform="true" />
         
         <texture builtin="flat" height="512" name="textable" rgb1="0.5 0.5 0.5" rgb2="0.5 0.5 0.5" width="512" />
         <material name="table_mat" texture="textable" />
-    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0027/model_transform_scaled.stl" name="0027_visual_mesh" scale="1 1 1" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0027/1.stl" name="0027_collision_mesh_1" scale="1 1 1" /></asset>
+    <mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/utils/../models/assets/shapenet_mug/visual/0028/model_transform_scaled.stl" name="0028_visual_mesh" scale="1 1 1" /><mesh file="/home/xiaoyu/Desktop/yogee/dex-affordance/hand_imitation_2/hand_imitation/env/utils/../models/assets/shapenet_mug/collision/0028/1.stl" name="0028_collision_mesh_1" scale="1 1 1" /></asset>
         
         <worldbody>
                 <body name="hand" pos="-0.47 -0.75 -0.5">
@@ -171,7 +171,7 @@
         <camera mode="fixed" name="frontview" pos="0 -1 0.9" quat="0.65 0.2705981, 0.2705981, 0.6532815" />
         <camera mode="fixed" name="backview" pos="0 0.6 0.9" quat="0 0 0.2815 0.9595" />
         <camera mode="fixed" name="sideview" pos="-1.3 -0.5 0.5" quat=" 0.6781121 0.5164697 -0.3290275 -0.4064037" />
-    <body name="0027_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0027_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0027_collision_mesh_1" name="collision_0027_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0027_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0027_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
+    <body name="0028_0" pos="0 0 0.04065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" group="1" mesh="0028_visual_mesh" type="mesh" /><geom condim="4" density="1000" friction="1 0.5 0.01" group="2" margin="0.003" mesh="0028_collision_mesh_1" name="collision_0028_1" type="mesh" /><joint armature="0.001" damping="0" frictionloss="0.001" limited="false" name="0028_joint_0" type="free" /></body><body name="target" pos="0.10845 0.0965 0.16065" quat="0.707 0 0 0.707"><geom conaffinity="0" contype="0" mesh="0028_visual_mesh" rgba="0 1 0 0.125" type="mesh" /></body></worldbody>
 
         <contact>
                 <pair condim="1" geom1="C_thumb_distal" geom2="C_hand" />
@@ -220,7 +220,7 @@
                 <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.75 1.75" gainprm="50 0 0 0 0 0 0 0 0 0" joint="ARTz" name="A_ARTz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
 
                 <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.3 0.3" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRx" name="A_ARRx" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
-                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.25 0.25" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRy" name="A_ARRy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
+                <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.16 0.16" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRy" name="A_ARRy" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
                 <general biasprm="0 -200 0 0 0 0 0 0 0 0" biastype="affine" ctrllimited="true" ctrlrange="-0.95 0.95" gainprm="300 0 0 0 0 0 0 0 0 0" joint="ARRz" name="A_ARRz" user="0 1 0.03 0.0939711 0.513477 0.0358776 1.23598 8.40409 0.485031 6.04244 1.02187 0.175297 0.121642 0 0 0" />
 
 
